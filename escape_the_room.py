@@ -7,6 +7,9 @@ import sys
 
 @dataclass
 class room(Enum):
+    """
+    This has all the rooms for this game. Each room has 6 attributes, s, n, e, w, hint and picture
+    """
     foodcourt = {
         "s": "outcropping",
         "n": "wall",
