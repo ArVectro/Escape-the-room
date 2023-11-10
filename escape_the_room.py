@@ -1,14 +1,9 @@
-from dataclasses import dataclass
-from enum import auto
-
 from enum import Enum
 import sys
 
-
-@dataclass
 class room(Enum):
     """
-    This has all the rooms for this game. Each room has 6 attributes, s, n, e, w, hint and picture
+    This has all the rooms for this game. Each room has 6 s, s, n, e, w, hint, and picture
     """
     foodcourt = {
         "s": "outcropping",
@@ -38,9 +33,9 @@ class room(Enum):
         ######################################################
         #                                                    #
         #                        Outcropping                #
-        #                  #                                #
-        #                 # ##                             #
-         #               #   ##        ##                 #  
+        #                  #                                #       N
+        #                 # ##                             #      W + E
+         #               #   ##        ##                 #         S
           #             #      #     # #    #       #      #                        ######
            #           #        #   #   #  ##     # #    #                          #     #
             ###########         #####    ### #####  #####                           #Island#
@@ -70,20 +65,20 @@ class room(Enum):
         "n": "flyingpotion",
         "e": "zombieroom",
         "w": "wall",
-        "hint": "You are now in a room with a low ceiling. A figure hovers over you. You need to run away. Type 'e' or 's' to scram. Quick! It is coming...",
+        "hint": "You are now in a room with a low ceiling. Two figures hover over you. You need to run away. Type 'e' or 's' to scram. Quick! It is coming...",
         "picture":"""
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        """
+        ###################################################
+        #     /\                                          #
+        #   _/__\_                  /| |\                 #     N
+        #     @@                   ( |_| )        #########   W + E
+        #    (  )                  | = = |        # door  #     S
+        #   (    )       ######    { ^^^ }'\      #########                       ________
+        #  (______)      #door#    \-----   \             #     |''''|    |    |     ||     |'''''  |    /  | 10..9..8..7..6..
+        #   ||  ||      #    #      \________\            #     |    |    |    |     ||     |       |----   |
+        ###################################################     |,,,,|,,  |____|  ___||___  |_____  |    |  .
+                                                                        
+        """                                                                     
     }
-
 
 print(
     "You roll around on the floor, waiting for the fire to come to you, but... nothing comes. You open your eyes."
@@ -129,3 +124,4 @@ while True:
                     print(current_room.value["picture"])
     else:
         print("I don't know what you're saying. Read instructions carefully")
+
